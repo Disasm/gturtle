@@ -1,3 +1,82 @@
+--[[
+Command parameters
+------------------
+X, Y, Z - coordinates
+R - direction
+S - slot number
+C - count, amount
+
+Commands
+--------
+G0: Move
+G0 Xnnn Ynnn Znnn Rnnn
+
+G4: Dwell
+Examples:
+G4 P200 (200 ms)
+G4 S2 (2 s)
+
+G28: Move to Origin (Home)
+Examples:
+G28 (Go to origin on all axes)
+G28 X Z (Go to origin only on the X and Z axis)
+
+G90: Set to Absolute Positioning
+G91: Set to Relative Positioning
+
+G92: Set Position
+Example: G92 X10 R3
+
+
+
+M50: Place Forward
+M50 Snnn
+
+M51: Place Down
+M51 Snnn
+
+M52: Place Up
+M52 Snnn
+
+M53: Dig Forward
+M54: Dig Down
+M55: Dig Up
+
+M56: Suck Forward
+M56 Cnnn
+
+M57: Suck Down
+M57 Cnnn
+
+M58: Suck Up
+M58 Cnnn
+
+M60: Get Position
+M60
+ok X:nnn Y:nnn Z:nnn R:nnn
+
+M61: Get Fuel Level
+M61
+ok C:nnn (-1 in case of disabled fuel)
+
+M62: Get Fuel Limit
+M62
+ok C:nnn (-1 in case of unlimited fuel)
+
+M63: Refuel
+M63 Snnn [Cnnn]
+
+M64: Get Item Count
+M64 S1
+ok C:64
+
+M65: Select Slot
+M65 Snnn
+
+M66: Gather
+M66 [Snnn]
+]]--
+
 state = {}
 state.x = 0;
 state.y = 0;
