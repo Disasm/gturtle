@@ -194,12 +194,12 @@ end
 
 function turnLeft()
     turtle.turnLeft()
-    state.r = (state.r - 1 + 4) % 4
+    state.r = (state.r + 1) % 4
 end
 
 function turnRight()
     turtle.turnRight()
-    state.r = (state.r + 1) % 4
+    state.r = (state.r - 1 + 4) % 4
 end
 
 function turn(r)
@@ -211,11 +211,11 @@ function turn(r)
 
     if deltaRight < deltaLeft then
         while r ~= state.r do
-            turnRight()
+            turnLeft()
         end
     else
         while r ~= state.r do
-            turnLeft()
+            turnRight()
         end
     end
 end
